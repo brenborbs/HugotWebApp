@@ -148,7 +148,7 @@ exports.listAllPostsCategoriesTags = (req, res) => {
     .skip(skip)
     .limit(limit)
     .select(
-      "_id about author body slug excerpt categories tags postedBy createdAt updatedAt"
+      "_id about author source verification body slug excerpt categories tags postedBy createdAt updatedAt"
     )
     .exec((err, data) => {
       if (err) {
@@ -185,7 +185,7 @@ exports.read = (req, res) => {
     .populate("tags", "_id name slug")
     .populate("postedBy", "_id name username")
     .select(
-      "_id about author body slug mabout mdesc categories tags postedBy createdAt updatedAt"
+      "_id about source verification author body slug mabout mdesc categories tags postedBy createdAt updatedAt"
     )
     .exec((err, data) => {
       if (err) {

@@ -40,5 +40,12 @@ router.delete(
   canUpdateDeletePost,
   remove
 );
+router.put(
+  "/user/post/:slug",
+  requireSignin,
+  authMiddleware,
+  canUpdateDeletePost,
+  update
+);
 
 module.exports = router;
