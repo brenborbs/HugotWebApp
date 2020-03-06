@@ -30,7 +30,7 @@ exports.publicProfile = (req, res) => {
       .populate("postedBy", "_id name")
       .limit(10)
       .select(
-        "_id about slug excerpt categories tags postedBy createdAt updatedAt"
+        "_id about body slug excerpt categories tags postedBy createdAt updatedAt"
       )
       .exec((err, data) => {
         if (err) {

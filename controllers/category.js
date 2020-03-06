@@ -43,7 +43,7 @@ exports.read = (req, res) => {
     Post.find({ categories: category })
       .populate("categories", "_id name slug")
       .populate("tags", "_id name slug")
-      .populate("postedBy", "_id name")
+      .populate("postedBy", "_id name slug")
       .select(
         "_id about body author source verification slug excerpt categories tags postedBy createdAt updatedAt"
       )
